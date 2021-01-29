@@ -9,3 +9,6 @@ Its complete rest API for Question and Answering with any unstructure document. 
 `docker run — name qna_app -d -p 8777:8777 xxxxxxxxx`
 
 #### Note : xxxxxxxxx is the image id
+
+# Code Explaination
+The complete step by step explaination are provided [here](https://medium.com/analytics-vidhya/how-to-create-your-question-and-answering-flask-api-using-haystack-e97205a240d1)
