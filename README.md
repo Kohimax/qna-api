@@ -37,10 +37,17 @@ document_store = ElasticsearchDocumentStore(host=app.config["host"],
                                                 username=app.config["username"],
                                                 password=app.config["password"],
                                                 index='electrical')
-retriever = DensePassageRetriever(document_store=document_store, embedding_model="dpr-bert-base-nq",do_lower_case=True, use_gpu=False)
+
+retriever = DensePassageRetriever(document_store=document_store,
+                                  embedding_model="dpr-bert-base-nq",
+                                  do_lower_case=True, use_gpu=False)
+
+# Farm reader using the trained model
 reader = FARMReader(model_name_or_path=app.config["train_model"] ,use_gpu=False)
+
 finder = Finder(reader, retriever)
-n = 1
+
+n = 5
 question="asked your query here?"
 prediction = finder.get_answers(question=question, top_k_retriever=10, top_k_reader=n)
 ```
