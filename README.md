@@ -10,7 +10,7 @@ Its complete rest API for Question and Answering with any unstructure document. 
 
 #### Note : xxxxxxxxx is the image id
 
-# Training Example
+# Training
 ```python
 from haystack.reader.farm import FARMReader
 
@@ -30,7 +30,7 @@ reader.train(
 
 print('Training successfully completed')
 ```
-# Example
+# Testing
 ```python
 document_store = ElasticsearchDocumentStore(host=app.config["host"],
                                                 port=app.config["port"],
